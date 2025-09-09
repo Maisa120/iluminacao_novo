@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Iluminação</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .lampada {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: gray;
+      margin: 20px;
+      box-shadow: 0 0 20px #000;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .lampada.ligada {
+      background: yellow;
+      box-shadow: 0 0 50px yellow;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>💡 Controle de Iluminação</h1>
+  <div id="lampada" class="lampada"></div>
+  <button onclick="alternar()">Ligar / Desligar</button>
+
+  <script>
+    function alternar() {
+      const lampada = document.getElementById("lampada");
+      lampada.classList.toggle("ligada");
+    }
+  </script>
+</body>
+</html>
